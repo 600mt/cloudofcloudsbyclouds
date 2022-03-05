@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+  <div id="nav" class="row">
+      <div class="col-3"> <p class="intro-text"> Depot Boijmans ☁ Van Beuningen </div> 
+      <div class="col-6"> 
+        <button class="button"> LIVE weather-driven cloudscape collection </button> <br></div>
+      <div id="about1"class="col-3"> <p class="intro-text"> About the project </p> </div>
+  </div>
+
+  <div id="about" class="container">
+
+    <div class="row">  
+      <div class="col-6" id="about-title"> 
+        <p> ABOUT </p>  
+      </div>
+      <div class="col-6" id="about-title" style="text-align:right"> 
+        <p> CLOSE </p>  
+      </div>
+    </div>
+
+    <div class="row" id="about-text">  
+      <div class="col-12"> <p> LOOKING UP <br>
+        During the 17th century, painters all over Europe and especially in the Netherlands, began to give massive importance to the sky, leaving almost the full height of the canvas to its representation. The new sensibility towards this subject is clearly visible in the first categorisation and nomenclature of clouds made in 1802, for which were used cloudscape paintings as a sort of rudimentary weather data collection. Today, clouds are more than ever an urgent subject: we observe, analyze and even produce them in order to understand climate change and prevent weather disasters.  
+         </p>  </div> <br>
+      <div class="col-12"> <p> A CLOUD’S CLOUD BY CLOUDS <br>
+        The LIVE Depot Cloudscape Collection, based only on cloudscapes of Dutch painters, allows new ways of reading the Depot Boijmans Van Beuningen, using the paintings as data objects. The online collection works as a cloud (an online storage structure) that contains clouds (the ones depicted in the paintings) and that displays them according to the actual presence of clouds (the ones in Rotterdam’s sky), turning it into an instantaneous display of current weather conditions.
+      </p>  </div>
+    </div>
+  </div>
+  
+  <div id="nav-info">
+      <p class="info-text" id="time">00:00</p><br>
+      <p class="info-text" id="city"></p><br>  
+      <p class="info-text" id="weather"></p>
+      <p class="info-text" id="author"></p>
+  </div>
+</div>
+
+
+
+  <div class="row" id="image-placeholder">
+  </div>
+      <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+      <script src="js/script.js"></script>
+
+
+
+</div>
+
+
+
+
+</body>
+
+</html>
+
+<style>
+  @font-face {
+    font-family: "SF reg";
+    src: url(font/SF-Pro-Rounded-Regular.otf);
+  }
+  body {
+    background-color:#e2e6ec;
+    margin: 1vw;
+    text-align: center;
+  }  
+  .container {
+    max-width:100%;
+    padding:0%;
+  }
+  #nav {
+    margin-top:4vh;
+    margin-bottom: 1vh;
+    align-items: center;
+  }
+  #nav-info {
+    margin-top:4vh;
+    margin-bottom: 1vh;
+    align-items: center;
+    position:relative;
+  }
+  #about {
+    display:block;
+    background-color:aliceblue;
+    width: 100vw;
+    height: 100vh;
+    border-radius:50px;
+    position: absolute;
+    margin-top: 2%;
+    opacity: 1;
+    z-index: 9;
+    align-items: center;
+  }
+  .button {
+    display: inline;
+    cursor: none;
+    text-decoration: none;
+    border: none;
+    font-family: 'SF reg', sans-serif;
+    background-color:rgba(0, 0, 0, 0.082);
+    border-radius:5vh;
+    padding-left:3%;
+    padding-right:3%;
+    padding-bottom:1.3%;
+    padding-top:1%;
+    color:black;
+    font-weight: 500;
+    font-size: 90%;
+    z-index:-99;
+  }
+
+  button:onclick {
+    display: inline;
+    cursor: none;
+    text-decoration: none;
+    border: none;
+    font-family: 'SF reg', sans-serif;
+    background-color:rgba(0, 0, 0, 0.082);
+    border-radius:5vh;
+    padding-left:3%;
+    padding-right:3%;
+    padding-bottom:1.3%;
+    padding-top:1%;
+    color:black;
+    font-weight: 500;
+    font-size: 100%;
+    z-index:-99;
+    margin-bottom:5%;
+  }
+  .intro-text {
+    display: inline;
+    font-family: 'SF reg', sans-serif;
+    color:black;
+    opacity:20%;
+    font-weight: 600;
+    font-size: 80%;
+  }
+  #about-title {
+    display: block;
+    font-family: 'SF reg', sans-serif;
+    color:black;
+    opacity:100%;
+    font-weight: 800;
+    font-size: 100%;
+    text-align: left;
+    padding-left:5vw;
+    padding-right:5vw;
+    padding-top:3vh;
+  }
+  #title-row {
+    padding:3%;
+  }
+  #about-text {
+    display: block;
+    font-family: 'SF reg', sans-serif;
+    color:black;
+    opacity:100%;
+    font-weight: 700;
+    font-size: 130%;
+    text-align: center;
+    padding-left:20vw;
+    padding-right:20vw;
+    padding-top:5vh;
+  }
+  .info-text {
+    display: inline;
+    font-family: 'SF reg', sans-serif;
+    font-weight: 500;
+    font-size: 250%;
+    text-transform: capitalize;
+  }
+  .img-landscape {
+    width: 32.2%;
+    padding-right: 0.5%;
+    padding-left: 0.5%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    height: fit-content;
+  }
+  #image-placeholder {
+    display: block;
+    flex-wrap: wrap;
+    background-size: contain;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: absolute;
+    margin-top: 2%;
+    z-index: -1;
+  }
+</style>
