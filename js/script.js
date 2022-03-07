@@ -1,3 +1,21 @@
+//nascondere about
+function hide() {
+  console.log("Hello!");
+  document.getElementById("about").style.display == "none";
+}    
+
+function hideAbout(){
+  let aboutDiv = document.getElementById('about');
+  if (aboutDiv.style.display == 'none'){
+    aboutDiv.style.display = 'block';
+  }else{
+    aboutDiv.style.display = 'none';
+  }
+}
+
+document.getElementById('abutton').onclick = hideAbout;
+document.getElementById('close').onclick = hideAbout;
+
 /// array of elements and properties
 let array = [ 
   { url: 'https://storage.boijmans.nl/collection/tmsfotook2523-ok-jt20160411/medium-0881161cdfa6963c578146f4618c062d658119c8.jpg', time: 'afternoon', position: '2', weather: 'broken clouds', title:'Anglers on a Small Wooden Bridge', author:'Maerten Fransz. van der Hulst' },
@@ -125,16 +143,19 @@ let title = document.getElementById('title');
 let currentTime = hour;
 
 
+//show author
+function showAuthor() {
+  document.getElementById("author").innerHTML = "";
+}
+
+
+
 window.addEventListener('load', (event) => {
   //check api for weather data
   checkWeatherData();
   setInterval(refreshTime, 5000);
 });
 
-
-function showAuthor() {
-  document.getElementById("author").innerHTML = "";
-}
 
 // check current time (every 5 seconds)
 
@@ -224,5 +245,5 @@ function rN(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-    
+
 
