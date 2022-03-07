@@ -9,37 +9,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
 <div class="container">
   <div id="nav" class="row">
-      <div class="col-3"> <p class="intro-text"> Depot Boijmans ☁ Van Beuningen </div> 
-      <div class="col-6"> 
-        <button class="button"> LIVE weather-driven cloudscape collection </button> <br></div>
-      <div id="about1"class="col-3"> <p class="intro-text"> About the project </p> </div>
+      <div class="col-3" style="text-align:left; padding-left:5%;" > 
+        <p class="intro-text blink_me"> LIVE collection 
+      </div> 
+      <div class="col-6">  
+        <p class="intro-text"> A cloud of clouds by clouds </p> <br>
+      </div>
+      <div id="about1"class="col-3" style="text-align:right; padding-right:4%;">
+        <button class="abutton"> About the project </button>
+      </div>
+
   </div>
 
   <div id="about" class="container">
 
     <div class="row">  
-      <div class="col-6" id="about-title"> 
-        <p> ABOUT </p>  
+      <div class="col-3" id="about-title" style="text-align:left"> 
+        <p style="opacity:1"> ABOUT </p>  
       </div>
-      <div class="col-6" id="about-title" style="text-align:right"> 
-        <p> CLOSE </p>  
+      <div class="col-3" id="about-title" style="text-align:center"> 
+        <p style="opacity:0.4"> </p>  
+      </div>
+      <div class="col-3" id="about-title" style="text-align:center"> 
+        <p style="opacity:0.4"> </p>  
+      </div>
+      <div class="col-3" id="about-title" style="text-align:right"> 
+        <p style="opacity:0.4" id="close"> CLOSE </p>  
       </div>
     </div>
 
     <div class="row" id="about-text">  
-      <div class="col-12"> <p> LOOKING UP <br>
-        During the 17th century, painters all over Europe and especially in the Netherlands, began to give massive importance to the sky, leaving almost the full height of the canvas to its representation. The new sensibility towards this subject is clearly visible in the first categorisation and nomenclature of clouds made in 1802, for which were used cloudscape paintings as a sort of rudimentary weather data collection. Today, clouds are more than ever an urgent subject: we observe, analyze and even produce them in order to understand climate change and prevent weather disasters.  
-         </p>  </div> <br>
-      <div class="col-12"> <p> A CLOUD’S CLOUD BY CLOUDS <br>
-        The LIVE Depot Cloudscape Collection, based only on cloudscapes of Dutch painters, allows new ways of reading the Depot Boijmans Van Beuningen, using the paintings as data objects. The online collection works as a cloud (an online storage structure) that contains clouds (the ones depicted in the paintings) and that displays them according to the actual presence of clouds (the ones in Rotterdam’s sky), turning it into an instantaneous display of current weather conditions.
-      </p>  </div>
+      <div class="col-12" id="cloud urgency"> <p> 
+        During the 17th century, Dutch painters in particular began to give massive importance to the sky, leaving almost the entire height of the canvas to its representation. The new sensitivity towards this subject came along with the first nomenclature of clouds made in 1802, for which cloudscape paintings were used as a kind of rudimental meteorological data. The Depot contains hundreds of these artworks, although not really showing them: ironically, the only thing that is always visible is the sky and the clouds reflecting on the building. Cloud of clouds by clouds, is an alternative exploration of the hidden Depot Boijmans' cloudscape collection: it works as a "cloud" platform that contains clouds paintings which are filtered according to the actual presence of clouds above the Depot: an instant tool to visualize current weather conditions, but also an ever changing online exhibition.
+        </p>  <br>
+      </div>
+      <div class="col-12" id="cloud urgency"> <p> 
+      <img class="graph" src="img/grafico1.png">
+      </div>
+      <div class="col-12" id="project"> <p>
+        </p>  
+      </div>
     </div>
   </div>
   
@@ -79,8 +93,12 @@
     margin: 1vw;
     text-align: center;
   }  
-  .container {
+  img {
     max-width:100%;
+    padding:0%;
+  }
+  .container {
+    max-width:100vh%;
     padding:0%;
   }
   #nav {
@@ -94,19 +112,33 @@
     align-items: center;
     position:relative;
   }
-  #about {
+  .graph {
     display:block;
+  }
+  .blink_me {
+  animation: blinker 0.7s linear infinite;
+  }
+@keyframes blinker {
+  50% {
+    opacity: 0;
+    }
+  }
+  #about1 { 
+    text-align: right;
+  }
+  #about {
+    display:none;
     background-color:aliceblue;
     width: 100vw;
-    height: 100vh;
+    height: 170vh;
     border-radius:50px;
     position: absolute;
     margin-top: 2%;
-    opacity: 1;
+    opacity:0.9;
     z-index: 9;
     align-items: center;
   }
-  .button {
+  .abutton {
     display: inline;
     cursor: none;
     text-decoration: none;
@@ -120,33 +152,15 @@
     padding-top:1%;
     color:black;
     font-weight: 500;
-    font-size: 90%;
+    font-size: 80%;
     z-index:-99;
   }
 
-  button:onclick {
-    display: inline;
-    cursor: none;
-    text-decoration: none;
-    border: none;
-    font-family: 'SF reg', sans-serif;
-    background-color:rgba(0, 0, 0, 0.082);
-    border-radius:5vh;
-    padding-left:3%;
-    padding-right:3%;
-    padding-bottom:1.3%;
-    padding-top:1%;
-    color:black;
-    font-weight: 500;
-    font-size: 100%;
-    z-index:-99;
-    margin-bottom:5%;
-  }
   .intro-text {
     display: inline;
     font-family: 'SF reg', sans-serif;
     color:black;
-    opacity:20%;
+    opacity:80%;
     font-weight: 600;
     font-size: 80%;
   }
@@ -171,11 +185,11 @@
     color:black;
     opacity:100%;
     font-weight: 700;
-    font-size: 130%;
+    font-size: 180%;
     text-align: center;
-    padding-left:20vw;
-    padding-right:20vw;
-    padding-top:5vh;
+    padding-left:10vw;
+    padding-right:10vw;
+    padding-top:10vh;
   }
   .info-text {
     display: inline;
